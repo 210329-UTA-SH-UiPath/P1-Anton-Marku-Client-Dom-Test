@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PbClient", "PbClient\PbClient.csproj", "{3BB9E764-26FE-48D0-A4BC-3523DDF76153}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{59D5CB09-4ABC-417F-BD71-099646864AF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{279B9310-1598-4BBD-8175-3A96BF0718B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BB9E764-26FE-48D0-A4BC-3523DDF76153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB9E764-26FE-48D0-A4BC-3523DDF76153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB9E764-26FE-48D0-A4BC-3523DDF76153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB9E764-26FE-48D0-A4BC-3523DDF76153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D5CB09-4ABC-417F-BD71-099646864AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D5CB09-4ABC-417F-BD71-099646864AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D5CB09-4ABC-417F-BD71-099646864AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D5CB09-4ABC-417F-BD71-099646864AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{279B9310-1598-4BBD-8175-3A96BF0718B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{279B9310-1598-4BBD-8175-3A96BF0718B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{279B9310-1598-4BBD-8175-3A96BF0718B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{279B9310-1598-4BBD-8175-3A96BF0718B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C885164-C168-4AA0-9667-E26A5E6E529F}
+	EndGlobalSection
+EndGlobal
