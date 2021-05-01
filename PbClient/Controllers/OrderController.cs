@@ -14,6 +14,8 @@ namespace PbClient.Controllers
     public class OrderController : Controller
     {
         PbApi _api = new PbApi();
+        private List<OrderPizza> Pizzas;
+        private List<PizzaTopping> Toppings;
 
         public async Task<IActionResult> Index()
         {
@@ -36,6 +38,7 @@ namespace PbClient.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(Order item)
         {
+            item.TotalPrice = 0;
             var json = JsonConvert.SerializeObject(item);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
             using var client = _api.Initial();
