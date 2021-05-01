@@ -14,29 +14,9 @@
         <form asp-action="Add">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for=@Model.Id class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for=@Model.Name class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="LastTimeOrdered" class="control-label"></label>
-                <input asp-for="LastTimeOrdered" class="form-control" />
-                <span asp-validation-for="LastTimeOrdered" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="StoreId" class="control-label"></label>
-                <input asp-for="StoreId" class="form-control" />
-                <span asp-validation-for="StoreId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="StoreVisitTime" class="control-label"></label>
-                <input asp-for="StoreVisitTime" class="form-control" />
-                <span asp-validation-for="StoreVisitTime" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

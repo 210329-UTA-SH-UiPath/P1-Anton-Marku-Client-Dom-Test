@@ -39,6 +39,7 @@ namespace PbClient.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(Customer Customer)
         {
+            Customer.Id = 0;
             var json = JsonConvert.SerializeObject(Customer);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
             using var client = _api.Initial();
