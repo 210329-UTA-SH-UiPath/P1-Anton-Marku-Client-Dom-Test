@@ -42,6 +42,7 @@ namespace PbClient.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(Order item)
         {
+            item.CustomerId = IFS.CustomerId;
             item.OrderPizzas = new List<OrderPizza>();
             item.TotalPrice = 0;
             item.DateTime = DateTime.Now;

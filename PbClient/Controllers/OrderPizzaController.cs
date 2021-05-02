@@ -62,7 +62,7 @@ namespace PbClient.Controllers
         public IActionResult Delete(int id)
         {
             using var client = _api.Initial();
-            client.BaseAddress = new Uri(_api.url + "api/OrderPizza" + id);
+            client.BaseAddress = new Uri(_api.url + "api/OrderPizza/" + id);
             var response = client.GetAsync("");
             response.Wait();
             var result = response.Result;
