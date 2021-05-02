@@ -44,5 +44,37 @@ namespace PbClient.Controllers
             var result = response.Content.ReadAsStringAsync().Result;
             return RedirectToAction("Index");
         }
+
+
+        public IActionResult Delete(int id)
+        {
+            using var client = _api.Initial();
+            client.BaseAddress = new Uri(_api.url + "api/OrderPizza" + id);
+            var response = client.GetAsync("");
+            response.Wait();
+            var result = response.Result;
+
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<OrderPizza>();
+                readTask.Wait();
+
+                var op = readTask.Result;
+                return View(op);
+            }
+            else
+                return NotFound();
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeletePost(int? Id)
+        {
+            using var client = _api.Initial();
+            client.BaseAddress = new Uri(_api.url + "api/OrderPizza/" + Id);
+            var response = await client.DeleteAsync("");
+            var result = response.Content.ReadAsStringAsync().Result;
+            return RedirectToAction("Index");
+        }
     }
 }
