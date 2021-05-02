@@ -9,7 +9,7 @@ namespace PizzaBoxApi.Models
     public class Customer
     {
         [Key]
-        public int? Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime? LastTimeOrdered { get; set; }
         public int? StoreId { get; set; }

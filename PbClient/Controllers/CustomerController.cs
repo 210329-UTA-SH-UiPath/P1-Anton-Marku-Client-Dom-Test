@@ -45,7 +45,14 @@ namespace PbClient.Controllers
             using var client = _api.Initial();
             var response = await client.PostAsync("api/customer", data);
             var result = response.Content.ReadAsStringAsync().Result;
-            return RedirectToAction("Index");
+
+            Customer items = new Customer();
+            HttpClient client2 = _api.Initial();
+            HttpResponseMessage res = await client2.GetAsync($"api/Customer/{Customer.Name}");
+            var result2 = res.Content.ReadAsStringAsync().Result;
+            items = JsonConvert.DeserializeObject<Customer>(result2);
+            IFS.CustomerId = items.Id;
+            return Content($"Your account id is {items.Id}");  
         }
     }
 }

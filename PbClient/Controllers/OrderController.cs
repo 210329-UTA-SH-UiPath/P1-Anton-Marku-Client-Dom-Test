@@ -25,6 +25,12 @@ namespace PbClient.Controllers
                 var result = res.Content.ReadAsStringAsync().Result;
                 items = JsonConvert.DeserializeObject<List<Order>>(result);
             }
+            items = items.Where(i => i.CustomerId == IFS.CustomerId).ToList();
+            IFS.OrderIds.Clear();
+            foreach(var item in items)
+            {
+                IFS.OrderIds.Add(item.Id);
+            }
             return View(items);
         }
 
