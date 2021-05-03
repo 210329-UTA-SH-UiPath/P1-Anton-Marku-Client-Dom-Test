@@ -52,7 +52,8 @@ namespace PbClient.Controllers
             var result2 = res.Content.ReadAsStringAsync().Result;
             items = JsonConvert.DeserializeObject<Customer>(result2);
             IFS.CustomerId = items.Id;
-            return Content($"Your account id is {items.Id}");  
+            //return Content($"Your account id is {items.Id}");  
+            return RedirectToAction("Index","Order");
         }
     }
 }
