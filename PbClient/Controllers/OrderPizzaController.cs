@@ -15,6 +15,7 @@ namespace PbClient.Controllers
     {
         PbApi _api = new();
 
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             List<OrderPizza> items = new List<OrderPizza>();
@@ -59,34 +60,41 @@ namespace PbClient.Controllers
         }
 
 
-        public IActionResult Delete(int id)
-        {
-            using var client = _api.Initial();
-            client.BaseAddress = new Uri(_api.url + "api/OrderPizza/" + id);
-            var response = client.GetAsync("");
-            response.Wait();
-            var result = response.Result;
+        //public IActionResult Delete(int id)
+        //{
+        //    using var client = _api.Initial();
+        //    client.BaseAddress = new Uri(_api.url + "api/OrderPizza/" + id);
+        //    var response = client.GetAsync("");
+        //    response.Wait();
+        //    var result = response.Result;
+        //    var readTask = result.Content.ReadAsAsync<OrderPizza>();
+        //    readTask.Wait();
 
-            if (result.IsSuccessStatusCode)
-            {
-                var readTask = result.Content.ReadAsAsync<OrderPizza>();
-                readTask.Wait();
+        //    var op = readTask.Result;
+        //    return View(op);
 
-                var op = readTask.Result;
-                return View(op);
-            }
-            else
-                return NotFound();
+        //}
 
-        }
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> Delete(int id)
+        //{
+        //    //using var client = _api.Initial();
+        //    //client.BaseAddress = new Uri(_api.url + "api/OrderPizza/" + id);
+        //    //var response = await client.DeleteAsync("");
+        //    ////var response = await client.DeleteAsync("api/OrderPizza/" + id);
+        //    //var result = response.Content.ReadAsStringAsync().Result;
+        //    //return RedirectToAction("Index");
 
+        //    return Content($"{id}");
+        //}
         [HttpPost]
-        public async Task<IActionResult> DeletePost(int? Id)
+        public async Task<IActionResult> OnPostDelete(int id)
         {
             using var client = _api.Initial();
-            client.BaseAddress = new Uri(_api.url + "api/OrderPizza/" + Id);
+            client.BaseAddress = new Uri("http://localhost:54713/api/OrderPizza/" + id);
             var response = await client.DeleteAsync("");
             var result = response.Content.ReadAsStringAsync().Result;
+
             return RedirectToAction("Index");
         }
     }
